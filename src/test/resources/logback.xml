@@ -1,0 +1,28 @@
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{0} - %msg%n
+      </pattern>
+    </layout>
+  </appender>
+
+  <appender name="FILE"
+    class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>/Users/dann/log/wspusher.%d{yyyy-MM-dd_HH}.log
+      </fileNamePattern>
+      <maxHistory>10</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{0} - %msg%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <logger name="com.github.dann.wspusher" level="DEBUG"></logger>
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+    <!-- <appender-ref ref="FILE" /> -->
+  </root>
+</configuration>
