@@ -4,6 +4,7 @@ import org.eclipse.jetty.websocket.WebSocket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.github.dann.wspusher.common.WsConstants;
@@ -11,6 +12,7 @@ import com.github.dann.wspusher.common.util.WebSocketUtils;
 import com.github.dann.wspusher.pubsub.subscriber.Subscriber;
 
 @Component
+@Scope("prototype")
 public class DataPusherWebSocket implements WebSocket.OnTextMessage {
   private static Logger logger = LoggerFactory.getLogger(DataPusherWebSocket.class);
 
