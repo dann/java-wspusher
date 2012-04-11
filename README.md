@@ -26,6 +26,10 @@ Endpoint
 
     http://<server>:<port>/wspusher/receiver
 
+Post data to the endpoint after the websocket client to the ws endpoint!
+
+    curl -X POST -d "Awesome" http://localhost:7777/wspusher/receiver
+
 ### WebSocket Endpoint
 
     http://<server>:<port>/wspusher/websocket
