@@ -1,4 +1,6 @@
 JavaScript wspusher client example
 -----------------------------------
 
-See js/app.js
+Open index.html with Chrome if you just want to use websocket client!
+
+See also: js/app.js
