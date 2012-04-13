@@ -1,38 +1,32 @@
 $(function () {
 
 var maxTotalData = 100;
+var timeLine = new TimeSeries();
 
 function create_plotter() {
-  var options = {
-    series: { shadowSize: 0 },
-    yaxis: { min: 0, max: 10},
-    xaxis: { min: 0, max: maxTotalData, show: false }
-  };
-  var plot = $.plot($("#content"), [], options);
-  return plot;
+  var smoothie = new SmoothieChart({ 
+    millisPerPixel: 20, 
+    grid: { 
+      strokeStyle: '#555555',
+      lineWidth: 1,
+      millisPerLine: 1000,
+      verticalSections: 4 
+    }
+  });
+  smoothie.streamTo(document.getElementById("content"), 1000);
+  smoothie.addTimeSeries(timeLine, { 
+    strokeStyle:'rgb(0, 255, 0)', 
+    fillStyle:'rgba(0, 255, 0, 0.4)',
+    lineWidth:3 
+  });
 }
 
-var data = [];
-function createPlotData(channel, channelData) {
-  while(data.length > maxTotalData) {
-      data.shift();       
-  }
-
+function plot_channel_data(channelData) {
   var channelDataLength = channelData.length;
-  for (var i=0; i < channelDataLength; i++) { 
-    data.push(channelData[i]);
+  var now = new Date().getTime();
+  for (var i=0; i < channelDataLength; i++) {
+    timeLine.append(now, channelData[i]);
   }
-
-  return zipData(data);
-}
-
-function zipData(data) {
-  var res = [];
-  var length = data.length;
-  for (var i = 0; i < length; ++i) {
-    res.push([i, data[i]]);
-  }
-  return res;
 }
 
 function main() {
@@ -46,8 +40,7 @@ function main() {
     var oscciloscopeData = $.parseJSON( event.data );
     var channel = "ch1";
     var channelData = oscciloscopeData[channel];
-    plot.setData([ createPlotData(channel, channelData) ]);
-    plot.draw();
+    plot_channel_data(channelData);
   };
   ws.send({'name':'js client!'});
 }

@@ -39,7 +39,10 @@ public class DataPusherWebSocketServletTest {
 
   @Test
   public void testPushDataWithWebSocket() throws Exception {
-    doTest();
+    for (int i = 0; i < 100; i++) {
+      doTest();
+    }
+    Thread.sleep(50);
   }
 
   private void doTest() throws Exception {
