@@ -24,63 +24,64 @@
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">WSPusher</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">WSPusher</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+      <h1>wspusher</h1>
+      <p>wspusher push the data from the REST client to Web using WebSocket</p>
+      <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="span7">
+        <h2>Message from the micon</h2>
+        <p>Show the message if you post the data to the wspusher.</p> 
+        <pre>curl -X POST -d "hello" http://localhost:7777/wspusher/receiver</pre>
+        <p>Message from micon</p>
+        <div class="alert alert-block"" id="content"></div>
+      </div>
+      <div class="span5">
+        <h2>How to use</h2>
+        <ul>
+          <li>Run rabbitmq server</li>
+          <li>Run Jetty Server</li>
+          <li>Reload this page</li>
+          <li>Post data to the HTTP Endpoint</li>
+        </ul>
       </div>
     </div>
 
-    <div class="container">
+    <hr>
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>wspusher</h1>
-        <p>wspusher push the data from the REST client to Web using WebSocket</p>
-        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-      </div>
+    <footer>
+      <p>&copy; Dann 2012</p>
+    </footer>
 
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="span8">
-          <h2>Message from the micon</h2>
-           <p>Show the message if you post the data to the wspusher </p> 
-           <pre>curl -X POST -d "hello" http://localhost:7777/wspusher/receiver</pre>
-
-           <p>Message from micon ...</p>
-           <pre id="content"></pre>
-
-        </div>
-        <div class="span4">
-          <h2>Tutorial</h2>
-          <p>TBD!</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; Dann 2012</p>
-      </footer>
-
-    </div> <!-- /container -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-    <script src="js/libs/bootstrap/bootstrap.min.js"></script>
-    <script src="js/app.js"></script>
+  </div> <!-- /container -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="js/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
