@@ -56,9 +56,19 @@
     <!-- Example row of columns -->
 
     <div class="row-fluid">
-      <div class="span12">
-         <p>Oscillscope Graph</p>
-         <canvas id="content" width="500" height="250"></div>
+      <div class="span8">
+         <h2>Oscillscope Graph</h2>
+         <p>Show data from the oscilloscope!</p>
+         <div><canvas id="content" width="500" height="250"></div>
+      </div>
+      <div class="span4">
+        <h2>How to use</h2>
+        <ul>
+          <li>Run rabbitmq server</li>
+          <li>Run Jetty Server</li>
+          <li>Reload this page</li>
+          <li>Post data to the HTTP Endpoint</li>
+        </ul>
       </div>
 
     </div>
