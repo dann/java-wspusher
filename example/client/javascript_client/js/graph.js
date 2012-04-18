@@ -25,7 +25,7 @@ function plot_channel_data(channelData) {
   var channelDataLength = channelData.length;
   var now = new Date().getTime();
   for (var i=0; i < channelDataLength; i++) {
-    timeLine.append(now, channelData[i]);
+    timeLine.append(now + i, channelData[i]);
   }
 }
 
